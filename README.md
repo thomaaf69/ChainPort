@@ -1,74 +1,126 @@
-<!-- fallback_ChainPort_20260111115255_12491 -->
+# Datasette
 
-# ChainPort: Decentralized protocol aggregator enables seamless multi-connection routing with adaptive auto-scaling and load balancing Core Module Implementation
-> Advanced python solution leveraging modern architecture patterns and cutting-edge technology.
+Datasette is an open source tool for exploring and publishing structured data. It turns SQLite databases into an interactive website and a JSON API, making data easy to browse, query, and share.
 
-Decentralized protocol aggregator enables seamless multi-connection routing with adaptive auto-scaling and load balancing Core Module.
+Website: https://datasette.io
 
-ChainPort is designed to provide developers and professionals with a robust, efficient, and scalable solution for their python development needs. This implementation focuses on performance, maintainability, and ease of use, incorporating industry best practices and modern software architecture patterns.
+## What is Datasette?
 
-The primary purpose of ChainPort is to streamline development workflows and enhance productivity through innovative features and comprehensive functionality. Whether you're building enterprise applications, data processing pipelines, or interactive systems, ChainPort provides the foundation you need for successful project implementation.
+Datasette takes structured data and makes it usable.
 
-ChainPort's key benefits include:
+Given a SQLite database, Datasette automatically provides:
+- A clean web interface for humans
+- A JSON API for machines
+- SQL-powered querying without backend code
+- A deployable, shareable data app
 
-* **High-performance architecture**: Leveraging optimized algorithms and efficient data structures for maximum performance.
-* **Modern development patterns**: Implementing contemporary software engineering practices and design patterns.
-* **Comprehensive testing**: Extensive test coverage ensuring reliability and maintainability.
+It is designed to work out of the box with minimal configuration.
 
-# Key Features
+## Why Datasette?
 
-* **Clean and modular Python architecture**: Advanced implementation with optimized performance and comprehensive error handling.
-* **Comprehensive error handling and logging**: Advanced implementation with optimized performance and comprehensive error handling.
-* **Unit testing with pytest framework**: Advanced implementation with optimized performance and comprehensive error handling.
-* **Type hints for better code documentation**: Advanced implementation with optimized performance and comprehensive error handling.
-* **Command-line interface support**: Advanced implementation with optimized performance and comprehensive error handling.
+Most data lives in files or databases that are hard to explore and harder to share.
 
-# Technology Stack
+Datasette solves this by:
+- Eliminating custom backend work
+- Making data immediately interactive
+- Exposing APIs automatically
+- Scaling from small datasets to large public collections
 
-* **Python**: Primary development language providing performance, reliability, and extensive ecosystem support.
-* **Modern tooling**: Utilizing contemporary development tools and frameworks for enhanced productivity.
-* **Testing frameworks**: Comprehensive testing infrastructure ensuring code quality and reliability.
+It is commonly used for data journalism, research, civic data, internal tools, and open data publishing.
 
-# Installation
+## How it works
 
-To install ChainPort, follow these steps:
+```
+User
+ |
+ v
+Browser / API Client
+ |
+ v
+Datasette Server
+ - Web UI
+ - JSON API
+ - Query Engine
+ |
+ v
+SQLite Databases
+```
 
-1. Clone the repository:
+Datasette runs directly against SQLite databases and translates queries into fast, read-only responses.
 
+## Core features
 
-2. Follow the installation instructions in the documentation for your specific environment.
+- Interactive table browsing
+- Filtering, sorting, and faceting
+- JSON API for every table and query
+- SQL query support
+- Plugin system for extensibility
+- Simple local and cloud deployment
 
-# Configuration
+## Getting started
 
-ChainPort supports various configuration options to customize behavior and optimize performance for your specific use case. Configuration can be managed through environment variables, configuration files, or programmatic settings.
+Install Datasette:
 
-## # Configuration Options
+```
+pip install datasette
+```
 
-The following configuration parameters are available:
+Run it against a database:
 
-* **Verbose Mode**: Enable detailed logging for debugging purposes
-* **Output Format**: Customize the output format (JSON, CSV, XML)
-* **Performance Settings**: Adjust memory usage and processing threads
-* **Network Settings**: Configure timeout and retry policies
+```
+datasette mydata.db
+```
 
-# Contributing
+Open your browser at:
 
-Contributions to ChainPort are welcome and appreciated! We value community input and encourage developers to help improve this project.
+```
+http://localhost:8001
+```
 
-## # How to Contribute
+## Deployment
 
-1. Fork the ChainPort repository.
-2. Create a new branch for your feature or fix.
-3. Implement your changes, ensuring they adhere to the project's coding standards and guidelines.
-4. Submit a pull request, providing a detailed description of your changes.
+Datasette can run:
+- Locally
+- In Docker
+- On cloud platforms using built-in publish commands
 
-## # Development Guidelines
+No managed backend or database service required.
 
-* Follow the existing code style and formatting conventions
-* Write comprehensive tests for new features
-* Update documentation when adding new functionality
-* Ensure all tests pass before submitting your pull request
+## Plugins
 
-# License
+Datasette supports plugins that can:
+- Add authentication and permissions
+- Customize the UI
+- Add visualizations
+- Extend API behavior
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/thomaaf69/ChainPort/blob/main/LICENSE) file for details.
+Plugins allow Datasette to adapt to many use cases without changing the core.
+
+## Typical project structure
+
+```
+.
+├── data
+│   └── dataset.db
+├── plugins
+├── docs
+└── README.md
+```
+
+## Contributing
+
+Datasette is open source.
+
+To contribute:
+- Fork the repository
+- Create a branch
+- Add tests and documentation
+- Submit a pull request
+
+## License
+
+Datasette is open source software. See the repository for license details.
+
+## About
+
+Datasette was built to make structured data easy to explore, publish, and share. It focuses on simplicity, transparency, and flexibility, allowing teams and individuals to turn data into something people can actually use.
